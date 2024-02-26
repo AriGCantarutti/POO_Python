@@ -19,9 +19,10 @@ class ConSalarioFijo(Empleado):
 
     def calcularSalarioTotal(self):
         salarioTotal = 0
-        if self.anio_ingreso < 2:
+        anio = 2024 - self.anio_ingreso
+        if anio < 2:
             return self.salarioFijo
-        elif 2 < self.anio_ingreso < 5:
+        elif 2 < anio < 5:
             salarioTotal = (self.salarioFijo * 0.05) + self.salarioFijo
             return salarioTotal
         else:
@@ -54,17 +55,17 @@ class EmpAComision(Empleado):
         print(f'\nEl empleado con mayor cantidad de clientes captados es: {self.apellido}, {self.nombre} con un total de {self.numClientesCaptados} de clientes.')
 
 
-em1 = ConSalarioFijo(150000, "33123456", "Juan", "Campos", 3, "salarioFijo")
-em2 = ConSalarioFijo(170000, "35789456", "Martín", "Cañas", 5, "salarioFijo")
-em3 = ConSalarioFijo(145000, "36122333", "José", "Flores", 4, "salarioFijo")
-em4 = ConSalarioFijo(180000, "25489756", "Silvia", "Vargas", 8, "salarioFijo")
-em5 = ConSalarioFijo(190000, "21789632", "Romina", "Gomez", 1, "salarioFijo")
+em1 = ConSalarioFijo(150000, "33123456", "Juan", "Campos", 2016, "salarioFijo")
+em2 = ConSalarioFijo(170000, "35789456", "Martín", "Cañas", 2023, "salarioFijo")
+em3 = ConSalarioFijo(145000, "36122333", "José", "Flores", 2022, "salarioFijo")
+em4 = ConSalarioFijo(180000, "25489756", "Silvia", "Vargas", 2010, "salarioFijo")
+em5 = ConSalarioFijo(190000, "21789632", "Romina", "Gomez", 2022, "salarioFijo")
 
-em6 = EmpAComision(130000, 2, 5000, "34123456", "Susana", "Gomez", 3, "aComision")
-em7 = EmpAComision(130000, 5, 500, "24159874", "Marta", "Garcia", 3, "aComision")
-em8 = EmpAComision(130000, 4, 1000, "38965784", "Daniel", "Cruz", 3, "aComision")
-em9 = EmpAComision(130000, 3, 3000, "23489756", "Rita", "Salguero", 3, "aComision")
-em10 = EmpAComision(130000, 1, 5000, "16897452", "Luz", "Trejo", 3, "aComision")
+em6 = EmpAComision(130000, 2, 5000, "34123456", "Susana", "Gomez", 2020, "aComision")
+em7 = EmpAComision(130000, 5, 500, "24159874", "Marta", "Garcia", 2019, "aComision")
+em8 = EmpAComision(130000, 4, 1000, "38965784", "Daniel", "Cruz", 2018, "aComision")
+em9 = EmpAComision(130000, 3, 3000, "23489756", "Rita", "Salguero", 2023, "aComision")
+em10 = EmpAComision(130000, 1, 5000, "16897452", "Luz", "Trejo", 2022, "aComision")
 
 print('Los empleados con los que cuenta la empresa son: ')
 em1.mostrarSalario()
